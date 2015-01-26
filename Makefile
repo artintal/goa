@@ -23,7 +23,7 @@ LISP_BINS=$(addprefix bin/, $(LISP_EXES))
 LISP_DEPS=src/package.lisp src/optimize.lisp etc/cl-launch.lisp
 
 # Flags to build standalone executables
-CLFLAGS=--no-include --system optimize --lisp $(LISP) --dump '!' -f etc/cl-launch.lisp
+CLFLAGS=--no-include -Q --system optimize --lisp $(LISP) --dump '!' -f etc/cl-launch.lisp
 
 ifneq ($(LISP_STACK),)
 	LISP=sbcl
